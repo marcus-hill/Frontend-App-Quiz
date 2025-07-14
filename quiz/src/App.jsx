@@ -1,33 +1,45 @@
-import { useState } from 'react'
+import { useState, useEffect} from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import HomeScreen from './pages/HomeScreen'
+import QuizScreen from './pages/QuizScreen'
+import ResultsScreen from './pages/ResultsScreen'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
 
+  const [currentScreen, setCurrentScreen] = useState("home");
+  const [quizStarted, setQuizStarted] = useState(false);
+  const [currentCategory, setCurrentCategory] = useState(null);
+  const [theme, setTheme] = useState('dark');
+
+  // Use Effect for Category Selection - Quiz Starting
+  useEffect(() => {
+    if (currentCategory) {
+      setQuizStarted(true);
+      setCurrentScreen("quiz");
+      console.log("Use Effect has been run")
+    }
+  }, [currentCategory]); // ← runs whenever currentCategory changes
+
+  // Use Effect for Theme Selection
+  useEffect(() => {
+    document.body.classList.remove('light', 'dark');
+    document.body.classList.add(theme);
+  }, [theme]);
+
+
+  // useTheme(theme);
+
   return (
     <>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        { currentScreen === "home" && <HomeScreen currentCategory={currentCategory} setCurrentCategory={setCurrentCategory}></HomeScreen>}
+        { currentScreen === "quiz" && <QuizScreen currentCategory={currentCategory}></QuizScreen>}
+        { currentScreen === "results" && <ResultsScreen></ResultsScreen>}
+
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
