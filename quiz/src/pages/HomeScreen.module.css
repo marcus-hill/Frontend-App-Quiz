@@ -1,83 +1,82 @@
 .homeScreenContainer {
-    margin: calc(32rem/16) calc(24rem/16);
+  margin: calc(32rem / 16) calc(24rem / 16);
 }
 
 .title {
-    color: var(--main-text-color);
-    font-size: calc(40rem/16);
-    font-family: 'Rubik', sans-serif;
-    font-weight: 200;
-    line-height: 120%;
+  color: var(--main-text-color);
+  font-size: calc(40rem / 16);
+  font-family: "Rubik", sans-serif;
+  font-weight: 200;
+  line-height: 120%;
 }
 
 .title span {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .description {
-    font-family: 'Rubik', sans-serif;
-    font-style: italic;
-    font-size: calc(14rem/16);
-    font-weight: 200;
-    color: var(--description-text-color);
+  font-family: "Rubik", sans-serif;
+  font-style: italic;
+  font-size: calc(14rem / 16);
+  font-weight: 200;
+  color: var(--description-text-color);
 }
 
 .titleSection {
-    margin-bottom: calc(40rem/16);
-    max-width: 75%;
+  margin-bottom: calc(40rem / 16);
 }
 
 .categorySelection {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .imageContainer {
-    display: inline-flex;
-    border-radius: 6px;
+  display: inline-flex;
+  border-radius: 6px;
 }
 
 .categoryIcon {
-    width: calc(23rem/16);
-    margin: calc(6rem/16);
+  width: calc(23rem / 16);
+  margin: calc(6rem / 16);
 }
 
 .htmlImageContainer {
-    background-color: #FFF5ED;
+  background-color: #fff5ed;
 }
 
 .cssImageContainer {
-    background-color: #E0FDEF;
+  background-color: #e0fdef;
 }
 
 .javascriptImageContainer {
-    background-color: #EBF0FF;
+  background-color: #ebf0ff;
 }
 
 .accessibilityImageContainer {
-    background-color: #F6E7FF;
+  background-color: #f6e7ff;
 }
 
 .category {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    align-items: center;
-    font-family: 'Rubik', sans-serif;
-    font-weight: 500;
-    color: var(--main-text-color);
-    background-color: var(--box-background-color);
-    padding: 1rem;
-    max-width: 70%;
-    border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  color: var(--main-text-color);
+  background-color: var(--box-background-color);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 16px 40px var(--box-shadow-color);
 }
 
 .category:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .categoryName {
-    margin: 0;
-    font-size: calc(18rem/16);
+  margin: 0;
+  font-size: calc(18rem / 16);
 }

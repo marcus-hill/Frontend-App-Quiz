@@ -1,17 +1,25 @@
 body.light {
-    background-image: url('./assets/images/pattern-background-mobile-light.svg');
-    background-color: rgba(244, 246, 250,0.6);
-    background-blend-mode: lighten;
-    --main-text-color: #313E51;
-    --description-text-color: #626C7F;
-    --box-background-color: #FFFFFF;
+  background-image: url("./assets/images/pattern-background-mobile-light.svg");
+  background-color: rgba(244, 246, 250, 0.6);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: lighten;
+  --main-text-color: #313e51;
+  --description-text-color: #626c7f;
+  --box-background-color: #ffffff;
+  --box-shadow-color: rgba(143, 160, 193, 0.2);
 }
 
 body.dark {
-    background-image: url('./assets/images/pattern-background-mobile-dark.svg');
-    background-color: rgba(49, 62, 81,0.99);
-    background-blend-mode: darken;
-    --main-text-color: #FFFFFF;
-    --description-text-color: #ABC1E1;
-    --box-background-color: #3B4D66;
+  background-image: url("./assets/images/pattern-background-mobile-dark.svg");
+  background-color: rgba(49, 62, 81, 0.99);
+  background-blend-mode: darken;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  --main-text-color: #ffffff;
+  --description-text-color: #abc1e1;
+  --box-background-color: #3b4d66;
+  --box-shadow-color: rgba(49, 62, 81, 0.2);
 }
