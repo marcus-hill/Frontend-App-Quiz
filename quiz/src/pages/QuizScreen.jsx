@@ -10,6 +10,11 @@ const QuizScreen = ({ currentCategory }) => {
   const [isAnswered, setIsAnswered] = useState(false);
   const [isCorrect, setIsCorrect] = useState(null);
 
+  const handleSelect = (option) => {
+
+  };
+
+  const handleSubmit
   return <div></div>;
 };
 
