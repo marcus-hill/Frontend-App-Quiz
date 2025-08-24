@@ -1,0 +1,45 @@
+.quizQuestionContainer {
+  margin: calc(32rem / 16) calc(24rem / 16);
+  color: var(--description-text-color);
+  font-size: calc(14rem / 16);
+  font-family: "Rubik", sans-serif;
+}
+
+.numberOfQuestions {
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.question {
+  color: var(--main-text-color);
+  font-size: calc(20rem / 16);
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  margin-bottom: calc(24rem / 16);
+}
+
+.progressBar {
+  appearance: none;
+  height: 15px;
+  border-radius: 100px;
+  width: 100%;
+  margin-bottom: calc(40rem / 16);
+
+  &::-webkit-progress-bar {
+    background: white;
+    border-radius: 100px;
+  }
+
+  &::-webkit-progress-value {
+    background-color: #a729f5;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+  }
+
+  /* Firefox */
+  &::-moz-progress-bar {
+    background-color: #a729f5;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+  }
+}

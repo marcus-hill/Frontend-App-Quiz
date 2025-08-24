@@ -1,0 +1,49 @@
+.optionContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  font-family: "Rubik", sans-serif;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  align-items: center;
+  gap: 1rem;
+}
+
+.optionContainer:hover {
+  cursor: pointer;
+}
+
+.optionCorrect {
+}
+
+.optionIncorrect {
+}
+
+.optionSelected {
+  border: 3px solid #a729f5;
+}
+
+.questionLetterContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(10rem / 16) calc(15rem / 16);
+  background-color: #f4f6fa;
+  border-radius: 6px;
+}
+.questionLetter {
+  font-size: calc(18rem / 16);
+}
+
+.optionText {
+  color: var(--main-text-color);
+  font-weight: 600;
+  font-size: calc(18rem / 16);
+}
+
+/* This is for the correct/incorrect icon which will be added later */
+/* .test {
+  margin-left: auto;
+} */
