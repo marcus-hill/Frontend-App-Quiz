@@ -17,6 +17,7 @@ function App() {
   const [currentScreen, setCurrentScreen] = useState("home");
   const [quizStarted, setQuizStarted] = useState(false);
   const [currentCategory, setCurrentCategory] = useState(null);
+  const [points, setCurrentPoints] = useState(null);
   const [theme, setTheme] = useState("light");
 
   // Use Effect for Category Selection - Quiz Starting
@@ -45,7 +46,15 @@ function App() {
     }
   };
 
-  const handleQuizCompleted = () => {};
+  const handleQuizCompleted = (points) => {
+    setQuizStarted(false);
+    setCurrentPoints(points);
+    console.log("Completed with " + points + " points");
+
+    setCurrentScreen("results");
+  };
+
+  const handlePlayAgain = () => {};
 
   // useTheme(theme);
 
@@ -67,7 +76,7 @@ function App() {
         </div>
         {currentScreen === "home" && <HomeScreen currentCategory={currentCategory} setCurrentCategory={setCurrentCategory}></HomeScreen>}
         {currentScreen === "quiz" && <QuizScreen currentCategory={currentCategory} handleQuizCompleted={handleQuizCompleted}></QuizScreen>}
-        {currentScreen === "results" && <ResultsScreen></ResultsScreen>}
+        {currentScreen === "results" && <ResultsScreen currentCategory={currentCategory} points={points} handlePlayAgain={handlePlayAgain}></ResultsScreen>}
       </div>
     </>
   );

@@ -18,6 +18,24 @@
   margin-bottom: calc(24rem / 16);
 }
 
+.proceedButton {
+  width: 100%;
+  background-color: #a729f5;
+  border: none;
+  outline: none;
+  color: white;
+  font-family: "Rubik", sans-serif;
+  padding: 2rem 0;
+  border-radius: 24px;
+  margin-top: 2rem;
+  font-size: calc(20rem / 16);
+  font-weight: 500;
+}
+
+.proceedButton:hover {
+  cursor: pointer;
+}
+
 .progressBar {
   appearance: none;
   height: 15px;

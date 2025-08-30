@@ -16,9 +16,11 @@
 }
 
 .optionCorrect {
+  border: 3px solid #2fd887;
 }
 
 .optionIncorrect {
+  border: 3px solid #ee5454;
 }
 
 .optionSelected {
