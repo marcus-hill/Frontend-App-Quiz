@@ -11,6 +11,7 @@ const QuizScreen = ({ currentCategory, handleQuizCompleted }) => {
   const [isSelected, setIsSelected] = useState(false);
   const [isAnswered, setIsAnswered] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
+  const [invalidSelection, setInvalidSelection] = useState(false);
   const [correctAnswer, setCorrectAnswer] = useState(0);
   const [correctPoints, setCorrectPoints] = useState(0);
 
@@ -25,6 +26,7 @@ const QuizScreen = ({ currentCategory, handleQuizCompleted }) => {
   const handleSubmitAnswer = () => {
     if (isSelected) {
       setIsAnswered(true);
+      setInvalidSelection(false);
 
       questions[currentIndex].options.map((option, key) => {
         if (questions[currentIndex].answer === option) {
@@ -38,6 +40,8 @@ const QuizScreen = ({ currentCategory, handleQuizCompleted }) => {
           }
         }
       });
+    } else {
+      setInvalidSelection(true);
     }
   };
 
@@ -47,14 +51,15 @@ const QuizScreen = ({ currentCategory, handleQuizCompleted }) => {
       setSelectedOption(null);
       setIsSelected(false);
       setIsAnswered(false);
+      setInvalidSelection(false);
       setIsCorrect(false);
       setCorrectAnswer(false);
     } else {
-      handleQuizCompleted(correctPoints);
+      handleQuizCompleted(correctPoints, questions.length - 1);
     }
   };
 
-  return <QuizQuestion question={questions[currentIndex]} index={currentIndex} handleNextQuestion={handleNextQuestion} numberOfQuestions={questions.length} correctAnswer={correctAnswer} handleSelectAnswer={handleSelectAnswer} handleSubmitAnswer={handleSubmitAnswer} isAnswered={isAnswered} selectedOption={selectedOption} isCorrect={isCorrect}></QuizQuestion>;
+  return <QuizQuestion question={questions[currentIndex]} invalidSelection={invalidSelection} index={currentIndex} handleNextQuestion={handleNextQuestion} numberOfQuestions={questions.length} correctAnswer={correctAnswer} handleSelectAnswer={handleSelectAnswer} handleSubmitAnswer={handleSubmitAnswer} isAnswered={isAnswered} selectedOption={selectedOption} isCorrect={isCorrect}></QuizQuestion>;
 };
 
 export default QuizScreen;

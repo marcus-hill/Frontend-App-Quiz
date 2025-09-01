@@ -93,17 +93,6 @@ p {
   margin: 0;
 }
 
-.categoryInformation {
-  color: var(--main-text-color);
-  font-size: calc(18rem / 16);
-  font-family: "Rubik", sans-serif;
-  font-weight: 500;
-  line-height: 120%;
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-
 .topSection {
   margin: calc(24rem / 16);
   display: flex;
@@ -112,14 +101,13 @@ p {
   justify-content: space-between;
 }
 
-.imageContainer {
-  display: inline-flex;
-  border-radius: 6px;
+.theme-selector {
+  display: flex;
+  margin-left: auto;
 }
 
-.categoryIcon {
+.icon {
   width: calc(30rem / 16);
-  margin: calc(6rem / 16);
 }
 
 .html {
@@ -136,4 +124,73 @@ p {
 
 .accessibility {
   background-color: #f6e7ff;
+}
+
+/* Slider Checkbox */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin: 0 calc(8rem / 16);
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #a729f5;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #a729f5;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #a729f5;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+@media (min-width: 70rem) {
+  .topSection {
+    margin: calc(97rem / 16) calc(140rem / 16);
+  }
 }

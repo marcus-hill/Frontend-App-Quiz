@@ -2,6 +2,8 @@
   margin: calc(32rem / 16) calc(24rem / 16);
   color: var(--description-text-color);
   font-size: calc(14rem / 16);
+  display: flex;
+  flex-direction: column;
   font-family: "Rubik", sans-serif;
 }
 
@@ -32,8 +34,16 @@
   font-weight: 500;
 }
 
+.invalidButton {
+  background-color: #d289ff;
+}
+
 .proceedButton:hover {
   cursor: pointer;
+}
+
+.invalidButton:hover {
+  cursor: not-allowed;
 }
 
 .progressBar {
@@ -44,7 +54,7 @@
   margin-bottom: calc(40rem / 16);
 
   &::-webkit-progress-bar {
-    background: white;
+    background: var(--progress-bar-background);
     border-radius: 100px;
   }
 
@@ -59,5 +69,41 @@
     background-color: #a729f5;
     border-top-left-radius: 100px;
     border-bottom-left-radius: 100px;
+  }
+}
+
+.invalidSelectionContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: calc(23rem / 16);
+  gap: calc(8rem / 16);
+  font-size: calc(18rem / 16);
+  color: var(--invalid-selection-colour);
+}
+
+@media (min-width: 70rem) {
+  .quizQuestionContainer {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: calc(140rem / 16);
+  }
+
+  .numberOfQuestions {
+    font-size: calc(18rem / 16);
+  }
+
+  .question {
+    font-size: calc(36rem / 16);
+    max-width: calc(480rem / 16);
+    margin-bottom: calc(300rem / 16);
+  }
+
+  .optionContainer {
+    min-width: calc(550rem / 16);
+  }
+
+  .invalidSelectionContainer {
+    font-size: calc(24rem / 16);
   }
 }

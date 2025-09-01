@@ -2,7 +2,7 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  background-color: white;
+  background-color: var(--question-option-background);
   font-family: "Rubik", sans-serif;
   margin-bottom: 1rem;
   padding: 1rem;
@@ -34,6 +34,7 @@
   padding: calc(10rem / 16) calc(15rem / 16);
   background-color: #f4f6fa;
   border-radius: 6px;
+  color: #626c7f;
 }
 .questionLetter {
   font-size: calc(18rem / 16);
@@ -45,7 +46,12 @@
   font-size: calc(18rem / 16);
 }
 
-/* This is for the correct/incorrect icon which will be added later */
-/* .test {
-  margin-left: auto;
-} */
+@media (min-width: 70rem) {
+  .optionText {
+    font-size: calc(28rem / 16);
+  }
+
+  .optionContainer {
+    padding: 2rem;
+  }
+}

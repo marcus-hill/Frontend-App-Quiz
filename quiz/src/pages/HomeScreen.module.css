@@ -1,5 +1,7 @@
 .homeScreenContainer {
   margin: calc(32rem / 16) calc(24rem / 16);
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
@@ -79,4 +81,39 @@
 .categoryName {
   margin: 0;
   font-size: calc(18rem / 16);
+}
+
+@media (min-width: 70rem) {
+  .homeScreenContainer {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: calc(140rem / 16) calc(140rem / 16);
+    gap: calc(140rem / 16);
+  }
+
+  .categorySelection {
+    min-width: calc(500rem / 16);
+  }
+
+  .category {
+    padding: 2rem;
+  }
+
+  .categoryName {
+    font-size: calc(28rem / 16);
+  }
+
+  .categoryIcon {
+    width: calc(32rem / 16);
+  }
+
+  .title {
+    font-size: calc(64rem / 16);
+    max-width: calc(500rem / 16);
+    margin-bottom: calc(70rem / 16);
+  }
+
+  .description {
+    font-size: calc(20rem / 16);
+  }
 }

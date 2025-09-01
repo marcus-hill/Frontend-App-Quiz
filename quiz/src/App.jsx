@@ -2,13 +2,13 @@ import { useState, useEffect } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import HomeScreen from "./pages/HomeScreen";
-import htmlImage from "./assets/images/icon-html.svg";
-import cssImage from "./assets/images/icon-css.svg";
-import javascriptImage from "./assets/images/icon-js.svg";
-import accessibilityImage from "./assets/images/icon-accessibility.svg";
 import QuizScreen from "./pages/QuizScreen";
 import ResultsScreen from "./pages/ResultsScreen";
-import quizData from "./data.json";
+import iconMoonLight from "./assets/images/icon-moon-light.svg";
+import iconMoonDark from "./assets/images/icon-moon-dark.svg";
+import iconSunLight from "./assets/images/icon-sun-light.svg";
+import iconSunDark from "./assets/images/icon-sun-dark.svg";
+import DisplayCategory from "./components/DisplayCategory";
 import "./App.css";
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
   const [quizStarted, setQuizStarted] = useState(false);
   const [currentCategory, setCurrentCategory] = useState(null);
   const [points, setCurrentPoints] = useState(null);
+  const [totalQuestions, setTotalQuestions] = useState(null);
   const [theme, setTheme] = useState("light");
 
   // Use Effect for Category Selection - Quiz Starting
@@ -34,27 +35,30 @@ function App() {
     document.body.classList.add(theme);
   }, [theme]);
 
-  const returnCategoryImage = () => {
-    if (currentCategory.toLowerCase() === "html") {
-      return htmlImage;
-    } else if (currentCategory.toLowerCase() === "css") {
-      return cssImage;
-    } else if (currentCategory.toLowerCase() === "javascript") {
-      return javascriptImage;
-    } else if (currentCategory.toLowerCase() === "accessibility") {
-      return accessibilityImage;
-    }
-  };
-
-  const handleQuizCompleted = (points) => {
+  const handleQuizCompleted = (points, totalQuestions) => {
     setQuizStarted(false);
     setCurrentPoints(points);
     console.log("Completed with " + points + " points");
-
+    setTotalQuestions(totalQuestions + 1);
     setCurrentScreen("results");
   };
 
-  const handlePlayAgain = () => {};
+  const handlePlayAgain = () => {
+    setCurrentScreen("home");
+    setCurrentCategory(null);
+    setCurrentPoints(null);
+    setTotalQuestions(null);
+  };
+
+  const handleThemeChange = (event) => {
+    console.log("Checked: " + event.target.checked);
+
+    if (event.target.checked) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
 
   // useTheme(theme);
 
@@ -62,21 +66,19 @@ function App() {
     <>
       <div>
         <div className="topSection">
-          {quizStarted && (
-            <div className="categoryInformation">
-              <div className={"imageContainer " + currentCategory.toLowerCase()}>
-                <img className="categoryIcon" src={returnCategoryImage()} />
-              </div>
-              <p>{currentCategory}</p>
-            </div>
-          )}
+          {(quizStarted || currentScreen === "results") && <DisplayCategory currentCategory={currentCategory}></DisplayCategory>}
           <div className="theme-selector">
-            <p>Theme Placeholder</p>
+            <img className="icon" src={iconSunDark} />
+            <label class="switch">
+              <input type="checkbox" onChange={handleThemeChange} />
+              <span class="slider round"></span>
+            </label>
+            <img className="icon" src={iconMoonDark} />
           </div>
         </div>
         {currentScreen === "home" && <HomeScreen currentCategory={currentCategory} setCurrentCategory={setCurrentCategory}></HomeScreen>}
         {currentScreen === "quiz" && <QuizScreen currentCategory={currentCategory} handleQuizCompleted={handleQuizCompleted}></QuizScreen>}
-        {currentScreen === "results" && <ResultsScreen currentCategory={currentCategory} points={points} handlePlayAgain={handlePlayAgain}></ResultsScreen>}
+        {currentScreen === "results" && <ResultsScreen currentCategory={currentCategory} points={points} handlePlayAgain={handlePlayAgain} totalQuestions={totalQuestions}></ResultsScreen>}
       </div>
     </>
   );
