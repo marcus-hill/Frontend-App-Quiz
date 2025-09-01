@@ -68,12 +68,12 @@ function App() {
         <div className="topSection">
           {(quizStarted || currentScreen === "results") && <DisplayCategory currentCategory={currentCategory}></DisplayCategory>}
           <div className="theme-selector">
-            <img className="icon" src={iconSunDark} />
+            {theme === "light" ? <img className="icon" src={iconSunDark} /> : <img className="icon" src={iconSunLight} />}
             <label class="switch">
               <input type="checkbox" onChange={handleThemeChange} />
               <span class="slider round"></span>
             </label>
-            <img className="icon" src={iconMoonDark} />
+            {theme === "light" ? <img className="icon" src={iconMoonDark} /> : <img className="icon" src={iconMoonLight} />}
           </div>
         </div>
         {currentScreen === "home" && <HomeScreen currentCategory={currentCategory} setCurrentCategory={setCurrentCategory}></HomeScreen>}
