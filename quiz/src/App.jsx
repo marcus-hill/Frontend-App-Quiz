@@ -69,9 +69,10 @@ function App() {
           {(quizStarted || currentScreen === "results") && <DisplayCategory currentCategory={currentCategory}></DisplayCategory>}
           <div className="theme-selector">
             {theme === "light" ? <img className="icon" src={iconSunDark} /> : <img className="icon" src={iconSunLight} />}
-            <label class="switch">
-              <input type="checkbox" onChange={handleThemeChange} />
+            <label htmlFor="theme-changer" class="switch">
+              <input id="theme-changer" type="checkbox" onChange={handleThemeChange} aria-label="Toggle dark/light mode" />
               <span class="slider round"></span>
+              <span class="visually-hidden">Toggle dark/light mode</span>
             </label>
             {theme === "light" ? <img className="icon" src={iconMoonDark} /> : <img className="icon" src={iconMoonLight} />}
           </div>

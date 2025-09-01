@@ -19,30 +19,38 @@ const HomeScreen = ({ currentCategory, setCurrentCategory }) => {
       <div className={classes.categorySelection}>
         <div onClick={() => setCurrentCategory("HTML")} className={classes.category}>
           <div className={clsx(classes.imageContainer, classes.htmlImageContainer)}>
-            <img className={classes.categoryIcon} src={htmlImage} />
+            <img className={classes.categoryIcon} src={htmlImage} alt="HTML Icon" />
           </div>
+          <span class="visually-hidden">Select </span>
           <p className={classes.categoryName}>HTML</p>
+          <span class="visually-hidden"> category</span>
         </div>
 
         <div onClick={() => setCurrentCategory("CSS")} className={classes.category}>
           <div className={clsx(classes.imageContainer, classes.cssImageContainer)}>
-            <img className={classes.categoryIcon} src={cssImage} />
+            <img className={classes.categoryIcon} src={cssImage} alt="CSS Icon" />
           </div>
+          <span class="visually-hidden">Select </span>
           <p className={classes.categoryName}>CSS</p>
+          <span class="visually-hidden"> category</span>
         </div>
 
         <div onClick={() => setCurrentCategory("JavaScript")} className={classes.category}>
           <div className={clsx(classes.imageContainer, classes.javascriptImageContainer)}>
-            <img className={classes.categoryIcon} src={javascriptImage} />
+            <img className={classes.categoryIcon} src={javascriptImage} alt="JavaScript Icon" />
           </div>
+          <span class="visually-hidden">Select </span>
           <p className={classes.categoryName}>Javascript</p>
+          <span class="visually-hidden"> category</span>
         </div>
 
         <div onClick={() => setCurrentCategory("Accessibility")} className={classes.category}>
           <div className={clsx(classes.imageContainer, classes.accessibilityImageContainer)}>
-            <img className={classes.categoryIcon} src={accessibilityImage} />
+            <img className={classes.categoryIcon} src={accessibilityImage} alt="Accessibility Icon" />
           </div>
+          <span class="visually-hidden">Select </span>
           <p className={classes.categoryName}>Accessibility</p>
+          <span class="visually-hidden"> category</span>
         </div>
       </div>
     </div>

@@ -23,7 +23,7 @@ const DisplayCategory = ({ currentCategory }) => {
   return (
     <div className={classes.categoryInformation}>
       <div className={imageClassNames}>
-        <img className={classes.categoryIcon} src={returnCategoryImage()} />
+        <img className={classes.categoryIcon} src={returnCategoryImage()} alt={currentCategory + " Icon"} />
       </div>
       <p>{currentCategory}</p>
     </div>

@@ -189,6 +189,16 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 @media (min-width: 70rem) {
   .topSection {
     margin: calc(97rem / 16) calc(140rem / 16);
