@@ -19,7 +19,7 @@ function App() {
   const [currentCategory, setCurrentCategory] = useState(null);
   const [points, setCurrentPoints] = useState(null);
   const [totalQuestions, setTotalQuestions] = useState(null);
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
 
   // Use Effect for Category Selection - Quiz Starting
   useEffect(() => {
