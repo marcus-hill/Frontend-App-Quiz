@@ -39,7 +39,7 @@ const QuizQuestion = ({ index, question, numberOfQuestions, handleSelectAnswer, 
           </button>
         ) : (
           <button onClick={handleNextQuestion} className={classes.proceedButton}>
-            Next Question
+            {index + 1 == numberOfQuestions ? "Show Results" : "Next Question"}
           </button>
         )}
 

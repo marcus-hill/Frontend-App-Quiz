@@ -70,8 +70,8 @@ function App() {
           <div className="theme-selector">
             {theme === "light" ? <img className="icon" src={iconSunDark} /> : <img className="icon" src={iconSunLight} />}
             <label htmlFor="theme-changer" class="switch">
-              <input id="theme-changer" type="checkbox" onChange={handleThemeChange} aria-label="Toggle dark/light mode" />
-              <span class="slider round"></span>
+              <input id="theme-changer" type="checkbox" onChange={handleThemeChange} aria-label="Toggle dark/light mode" defaultChecked={true} />
+              <span tabindex={0} role="checkbox" aria-checked={theme === "dark" ? true : false} class="slider round"></span>
               <span class="visually-hidden">Toggle dark/light mode</span>
             </label>
             {theme === "light" ? <img className="icon" src={iconMoonDark} /> : <img className="icon" src={iconMoonLight} />}
